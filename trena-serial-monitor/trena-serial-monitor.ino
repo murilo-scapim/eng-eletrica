@@ -1,4 +1,4 @@
-Sensor ultrassônico mostrando distância no Serial Monitor
+// Sensor ultrassônico mostrando distância no Serial Monitor
 
 // Pinos do sensor
 const uint8_t PinTrigger = 8;
@@ -12,18 +12,17 @@ const float velocidadeSom_mps = 340;       // metros por segundo
 const float velocidadeSom_mpus = 0.000340; // metros por microssegundo
 
 void setup() {
+  Serial.begin(9600); // inicia comunicação com Serial Monitor
 
   pinMode(PinTrigger, OUTPUT); // pino que envia o pulso ultrassônico
   digitalWrite(PinTrigger, LOW);
 
   pinMode(PinEcho, INPUT); // pino que recebe o eco
 
-  Serial.begin(9600); // inicia comunicação com Serial Monitor
   delay(100);
 }
 
 void loop(){
-
   DisparaPulsoUltrassonico(); // envia pulso ultrassônico
 
   // mede o tempo que o eco levou para voltar
