@@ -10,7 +10,7 @@ void setup() {
 
 void loop() {
   valor = analogRead(potPin); // Leitura da tensão do pino A0
-  valor = map(valor, 0, 1023, 0, 179); // Converte a leitura em número (0-179)
+  valor = map(valor, 0, 1023, 0, 180); // Converte a leitura em número (0-180)
   servo.write(valor); // Controle PWM do servo
   delay(15); // Atraso de 15 milissegundos
 }
