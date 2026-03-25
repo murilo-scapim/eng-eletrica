@@ -34,6 +34,9 @@ void setup() {
   lcd.backlight();
 
   rtc.begin();
+  
+  // Ajusta o RTC para a data e hora da compilação
+  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 
   // Carregar horários salvos na EEPROM
   openHour = EEPROM.read(0);
